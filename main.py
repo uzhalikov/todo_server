@@ -20,7 +20,7 @@ app.config.update(
 
 CORS(app, 
      supports_credentials=True,
-     origins=["http://localhost:3000"],
+     origins=["https://todo-client-seven-psi.vercel.app/"],
      methods=["GET", "POST", "PUT", "DELETE"],
      allow_headers=["Content-Type", "Authorization", "X-Requested-With"],
      expose_headers=["Set-Cookie"]
