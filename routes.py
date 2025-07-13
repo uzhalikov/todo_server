@@ -97,3 +97,13 @@ def update_task(task_id):
     conn.commit()
     conn.close()
     return jsonify({'success': True})
+
+
+@app.route('/api/<path:path>', methods=['OPTIONS'])
+def handle_options(path):
+    response = jsonify()
+    response.headers.add('Access-Control-Allow-Origin', 'https://todo-client-seven-psi.vercel.app')
+    response.headers.add('Access-Control-Allow-Headers', 'Content-Type, Authorization')
+    response.headers.add('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE')
+    response.headers.add('Access-Control-Allow-Credentials', 'true')
+    return response
